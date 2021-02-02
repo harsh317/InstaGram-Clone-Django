@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.phoneimage{
+    padding-top: 70px;
+    height: 550px;
+    float: right;
+    margin:10px;
+}
+
+body
+{
+    background-color: #fafafa!important;
+}
+.container{
+    margin-top: 20px;
+}
+.right-column{
+    background: #fff;
+    border: 2px solid #e6e6e6;
+    width: 350px;
+    margin: 10px;
+    padding: 35px;
+}
+
+.instagram-logo{
+    margin: 5px auto;
+}
+
+.info{
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 17px;
+    color: #999;
+}
+.or{
+    font-size: 10px!important;
+    margin-top: 10px;
+    color:#999;
+    font-weight: 700;
+}
+

@@ -1,0 +1,27 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Harshgram</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{% static 'css/phone.png' %}" class="phoneimage">
+            </div>
+            <div class="col-sm-6">
+                <div class="right-column text-center">
+                    <img src="{% static 'css/logo.PNG' %}" class="instagram-logo">
+                    <p class="info">Sign Up to Enter Harsh's Fake Instagram</p>
+                    <button type="submit" class="btn btn-primary btn-block btn-sm" style="font-size: 0.6em;">Log In</button>
+                    <p class="or">OR</p>
+                    <button type="submit" class="btn btn-primary btn-block btn-sm" style="font-size: 0.6em;">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

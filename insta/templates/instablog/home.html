@@ -1,0 +1,52 @@
+{% extends 'instablog/base.html' %}
+
+{% block content %}
+{% for post in posts %}
+    <div class="card">
+
+        <div class="card_header">
+            <form method="post">
+            <div class="image-chnage">
+            <img class="rounded-circle" src="{{post.author.profilepic.image.url}}" style="height: 30px;width: 30px">
+            </div>
+            </form>
+            <div class="post_info">
+                <div class="post_name"><a href="{% url 'user-lists' post.author.username %}">{{post.author}}</a></div>
+                <div class="post_location">{{post.locat}}</div>
+            </div>
+        </div>
+        <div class="caption">
+            <a href="{% url 'post-detail-view' post.id %}"><h2>{{post.title}}:</h2></a>
+            <span><p>{{post.content}}</p></span>
+             <div>
+                {% if post.image %}
+                    <img src="{{post.image.url}}" style="display: block;margin-left: auto;margin-right: auto; border: 1px solid black;border-radius: 40px;max-width: 300px;max-height: 200;">
+                {% endif %}
+             </div>
+        </div>
+        <div class="date_posted">
+            {{post.date_posted|timesince}} AGO
+        </div>
+    </div>
+{% endfor %}
+    {% if is_paginated %}
+        <div style="text-align: center;">
+            {% if page_obj.has_previous %}
+                <acronym title="Go To The First Page"><a class="btn btn-outline-info" href="?page=1">First</a></acronym>
+            <acronym title="Previous Page"><a class="btn btn-outline-info" href="?page={{page_obj.previous_page_number}}">&laquo;</a></acronym>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-info" href="?page={{ num }}">{{num}}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-outline-info" href="?page={{ num }}">{{num}}</a>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <acronym title="Next Page"><a class="btn btn-outline-info" href="?page={{page_obj.next_page_number}}">&raquo;</a></acronym>
+                <acronym title="Go To The Last Page"><a class="btn btn-outline-info" href="?page={{page_obj.paginator.num_pages}}">Last</a></acronym>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,39 @@
+
+
+.profile{
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 240px;
+    max-height: 330px;
+    box-shadow: 0 0 10px rgba(0 ,0, 0, 0.2);
+    padding: 20px;
+}
+
+.profile__image{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+.profile__name{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.profile__detail{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 0.6em;
+    font-weight: bold;
+    color: #925555;
+
+}
+
+
+
+}

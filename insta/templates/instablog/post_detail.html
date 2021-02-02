@@ -1,0 +1,26 @@
+{% extends 'instablog/base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card_header">
+        <div class="image-chnage">
+        <a href="{%url 'profile'%}"><img class="rounded-circle" src="{{object.author.profilepic.image.url}}" style="height: 30px;width: 30px"></a>
+        </div>
+        <div class="post_info">
+            <div class="post_name"><a href="{% url 'user-lists' object.author.username %}">{{object.author}}</a></div>
+            <div class="post_location">India</div>
+        </div>
+    </div>
+    <div class="caption">
+        <h2>{{object.title}}</h2>
+        <span><p>{{object.content}}</p></span>
+    </div>
+    <div class="date_posted">
+        {{object.date_posted|timesince}} AGO
+    </div>
+
+    {% if object.author == user %}
+                <a href="{% url 'post-update-view' object.id %}" class="btn btn-secondary btn-sm mt-1 mb-1">Update</a>
+                <a href="{% url 'post-delete-view' object.id %}" class="btn btn-danger btn-sm mt-1 mb-1">Delete</a>
+    {% endif %}
+</div>
+{% endblock %}

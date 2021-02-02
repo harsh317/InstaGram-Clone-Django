@@ -1,0 +1,20 @@
+{% extends 'instablog/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{% static 'css/phone.png' %}" class="phoneimage">
+            </div>
+            <div class="col-sm-6">
+                <div class="right-column text-center">
+                    <img src="{% static 'css/logo.PNG' %}" class="instagram-logo">
+                    <p class="info">Sign Up to Enter Harsh's Fake Instagram</p>
+                    <button type="button" onclick="location.href='{% url 'login' %}'" class="btn btn-primary btn-block btn-sm" style="font-size: 0.6em;">Log In</button>
+                    <p class="or">OR</p>
+                    <button  type="button" onclick="location.href='{% url 'register' %}'" class="btn btn-primary btn-block btn-sm" style="font-size: 0.6em;">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
